@@ -13,7 +13,7 @@ export default class Login extends Component {
     }
     render() {
         let loginStatus = Number(sessionStorage.getItem('login'))
-        console.log('----------login:', this.props, loginStatus)
+        console.log('----------login11:', this.props, loginStatus)
         return (
             <div className="app-wrap-con">
                 <NavBar
