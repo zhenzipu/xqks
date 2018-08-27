@@ -17,10 +17,11 @@ export default class Login extends Component {
         return (
             <div className="app-wrap-con">
                 <NavBar
+                    leftContent="请登录"
                     mode="light"
                     icon={<Icon type="left" />}
                     onLeftClick={() => console.log('onLeftClick')}
-                >请登录</NavBar>
+                ></NavBar>
                 {
                     loginStatus === 1 ?
                         <button onClick={this.handleLogout}>loginout</button>
