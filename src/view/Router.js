@@ -10,7 +10,8 @@ import { Login } from '@/view/Login'
 import { Record } from '@/view/Record'
 import { Address } from '@/view/Address'
 import { Estimate } from '@/view/Estimate'
-import { Detail } from '@/view/Detail'
+import { ReceiveDetail } from '@/view/ReceiveDetail'
+import { SendDetail } from '@/view/SendDetail'
 // import { Button } from 'antd-mobile';
 import { MyTabBar } from '@components';
 
@@ -54,7 +55,8 @@ class App extends Component {
 					<Route path="/record" component={Record} />
 					<Route path="/address" component={Address} />
 					<Route path="/estimate" component={Estimate} />
-					<Route path='/detail'  component={Detail}/>
+					<Route path='/receive_detail' component={ReceiveDetail}/>
+					<Route path='/send_detail' component={SendDetail}/>
 					<Route path="/homeInfo" component={HomeInfo} />
 				</Switch>
 			</div>

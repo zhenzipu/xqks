@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavBar, Icon, List, WhiteSpace} from 'antd-mobile';
 
-export default class Detail extends Component {
+export default class ReceiveDetail extends Component {
     handleBack = () => {
         this.props.history.replace('/receive');
     }
@@ -9,11 +9,10 @@ export default class Detail extends Component {
         return (
             <div className="app-wrap-con">
                 <NavBar
-                    leftContent="包裹详细信息"
                     mode="light"
                     icon={<Icon type="left" />}
                     onLeftClick={this.handleBack}
-                ></NavBar>
+                >包裹详细信息</NavBar>
                 <WhiteSpace size="sm" />
                 <List style={{ backgroundColor: 'white' }}>
                     <List.Item

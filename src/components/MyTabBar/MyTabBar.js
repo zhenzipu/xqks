@@ -16,14 +16,14 @@ class MyTabBar extends Component {
             <TabBar
                 unselectedTintColor="#666"
                 tintColor="#f60"
-                barTintColor="black"
+                barTintColor="light"
                 noRenderContent={true}
                 hidden={show}
             >
                 <TabBarItem
                     icon={{ uri: require('../../assets/images/receive.svg') }}
                     selectedIcon={{ uri: require('../../assets/images/receive_act.svg') }}
-                    title="Receive"
+                    title="收快递"
                     key="Receive"
                     selected={showRoute[0] === location.pathname}
                     // badge={1}
@@ -31,7 +31,7 @@ class MyTabBar extends Component {
                 >
                 </TabBarItem>
                 <TabBarItem
-                    title="Send"
+                    title="发快递"
                     key="Send"
                     icon={{ uri: require('../../assets/images/send.svg') }}
                     selectedIcon={{ uri: require('../../assets/images/send_act.svg') }}
@@ -42,7 +42,7 @@ class MyTabBar extends Component {
                 <TabBarItem
                     icon={{ uri: require('../../assets/images/mine.svg') }}
                     selectedIcon={{ uri: require('../../assets/images/mine_act.svg') }}
-                    title="Mine"
+                    title="我的"
                     key="Mine"
                     selected={showRoute[2] === location.pathname}
                     onPress={() => { this.navTo(showRoute[2]) }}

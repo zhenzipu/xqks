@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { NavBar, Icon } from 'antd-mobile';
+import { NavBar, Icon, List, InputItem, Button } from 'antd-mobile';
+import { createForm } from 'rc-form';
 
-export default class Login extends Component {
+const Item = List.Item;
+class LoginForm extends Component {
     handleLogin = () => {
         sessionStorage.setItem('login', 1)
-        this.props.history.replace('/send');
+        this.props.history.replace('/mine');
     }
     handleLogout = () => {
         sessionStorage.setItem('login', 0)
@@ -12,8 +14,9 @@ export default class Login extends Component {
         window.location.reload()
     }
     render() {
-        let loginStatus = Number(sessionStorage.getItem('login'))
-        console.log('----------login11:', this.props, loginStatus)
+        const { getFieldProps } = this.props.form;
+        // let loginStatus = Number(sessionStorage.getItem('login'))
+        // console.log('----------login11:', this.props, loginStatus)
         return (
             <div className="app-wrap-con">
                 <NavBar
@@ -22,13 +25,25 @@ export default class Login extends Component {
                     icon={<Icon type="left" />}
                     onLeftClick={() => console.log('onLeftClick')}
                 ></NavBar>
-                {
-                    loginStatus === 1 ?
-                        <button onClick={this.handleLogout}>loginout</button>
-                        :
-                        <button onClick={this.handleLogin}>login</button>
-                }
+                <List>
+                    <InputItem
+                        {...getFieldProps('phone')}
+                        type="phone"
+                        placeholder="请输入手机号"
+                    >手机号</InputItem>
+                    <InputItem
+                        {...getFieldProps('digit')}
+                        type="digit"
+                        placeholder="请输入验证码"
+                        extra={<a style={{ color: '#f60', borderLeft: '1px solid #ccc', padding: '0 10px' }}>获取验证码</a>}
+                    >验证码</InputItem>
+                    <Item>
+                        <Button type="primary" size="small" style={{ color: '#fff', background: '#f60' }} onClick={this.handleLogin}>登录</Button>
+                    </Item>
+                </List>
             </div>
         );
     }
 }
+const Login = createForm()(LoginForm)
+export default Login

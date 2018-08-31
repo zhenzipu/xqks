@@ -1,19 +1,6 @@
 import React, { Component } from 'react';
-import { Tabs, WhiteSpace, Card, Picker, List } from 'antd-mobile';
+import { Tabs, WhiteSpace, Card } from 'antd-mobile';
 import './Receive.less';
-const ListItem = List.Item;
-const district = [
-    {
-        label: '东亚上北中心',
-        vlaue: 'ddd',
-        key: 1
-    },
-    {
-        label: '流星花园三区',
-        vlaue: 'sss',
-        key: 2
-    },
-]
 const tabs = [
     { title: '未取快递' },
     { title: '已取快递' },
@@ -28,7 +15,7 @@ export default class Receive extends Component {
         this.props.history.replace('/estimate');
     }
     handleChangeDetail=()=>{
-        this.props.history.replace('/detail');
+        this.props.history.replace('/receive_detail');
     }
     render() {
         let { pathname } = this.props.location

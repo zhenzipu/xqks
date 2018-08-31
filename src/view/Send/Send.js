@@ -28,6 +28,9 @@ export default class Send extends Component {
     handleEstimate=()=>{
         this.props.history.replace('/estimate');
     }
+    handleChangeDetail=()=>{
+        this.props.history.replace('/send_detail');
+    }
     render() {
         let { pathname } = this.props.location
         let { nowRoute } = this.props
@@ -165,7 +168,7 @@ export default class Send extends Component {
                     </div>
                     <div>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>马上付款</span>}
@@ -181,7 +184,7 @@ export default class Send extends Component {
                             <Card.Footer content="1.33公斤/25.00元" extra={<div>快递状态</div>} />
                         </Card>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>马上付款</span>}
@@ -197,7 +200,7 @@ export default class Send extends Component {
                             <Card.Footer content="1.33公斤/25.00元" extra={<div>快递状态</div>} />
                         </Card>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>马上付款</span>}
@@ -215,7 +218,7 @@ export default class Send extends Component {
                     </div>
                     <div>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>如风达T35343Ssdfsdf23423</span>}
@@ -229,7 +232,7 @@ export default class Send extends Component {
                             <Card.Footer content="1.33公斤/25.00元" extra={<div>快递状态</div>} />
                         </Card>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>如风达T35343Ssdfsdf23423</span>}
@@ -243,7 +246,7 @@ export default class Send extends Component {
                             <Card.Footer content="1.33公斤/25.00元" extra={<div>快递状态</div>} />
                         </Card>
                         <WhiteSpace size="sm" />
-                        <Card full>
+                        <Card full onClick={this.handleChangeDetail}>
                             <Card.Header
                                 title="邮寄包裹"
                                 extra={<span>如风达T35343Ssdfsdf23423</span>}
